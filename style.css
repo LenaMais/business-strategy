@@ -1,0 +1,185 @@
+body {
+    font-family: 'Exo', sans-serif;
+    background-color: #F3F2ED; /* mischka */
+}
+
+/* Цветовая палитра */
+:root {
+    --primary: #D4A017;       /* Pale Prim - золотой */
+    --primary-light: #F8E6BE; /* светлый золотой */
+    --primary-dark: #475d5e;  /* Глубокий бирюзово-зелёный */
+    --secondary: #126D83;     /* Matisse - бирюзовый */
+    --accent: #475d5e;        /* Глубокий бирюзово-зелёный */
+    --accent-light: #6a8a8c;  /* Светлый вариант акцентного */
+    --light: #E5DFCF;         /* Mischka - бежевый */
+    --highlight: #F8F3E6;     /* Primrose - светлый бежевый */
+    --text-finish: #475d5e;   /* Глубокий бирюзово-зелёный */
+}
+
+@keyframes intense-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; transform: scale(1.05); }
+  }
+  
+  .animate-intense-pulse {
+    animation: intense-pulse 2s infinite;
+  }
+
+/* Футер */
+.bg-primary-dark {
+    background-color: var(--primary-dark);
+}
+
+.text-primary-light {
+    color: var(--primary-light);
+}
+
+.border-primary {
+    border-color: var(--primary);
+}
+
+/* Иконки соцсетей */
+.footer-social-icon {
+    transition: all 0.3s ease;
+    background-color: var(--primary);
+}
+
+.footer-social-icon:hover {
+    background-color: var(--accent);
+    transform: translateY(-3px);
+}
+
+.hero-gradient {
+    background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 50%, var(--highlight) 100%);
+}
+
+.card-hover {
+    transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.nav-link::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: var(--primary);
+    transition: width 0.3s;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.animate-float {
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
+}
+
+.bg-light-indigo {
+    background-color: var(--light);
+}
+
+.text-indigo-800 {
+    color: var(--secondary);
+}
+
+.border-indigo-200 {
+    border-color: var(--light);
+}
+
+/* Дополнительные классы для новой палитры */
+.bg-primary {
+    background-color: var(--primary);
+}
+
+.bg-secondary {
+    background-color: var(--secondary);
+}
+
+.bg-accent {
+    background-color: var(--text-finish);
+}
+
+.text-primary {
+    color: var(--primary);
+}
+
+.text-secondary {
+    color: var(--secondary);
+}
+
+.text-accent {
+    color: var(--accent);
+}
+
+.border-primary {
+    border-color: var(--primary);
+}
+
+.hover\:bg-primary:hover {
+    background-color: var(--primary);
+}
+
+.hover\:bg-secondary:hover {
+    background-color: var(--secondary);
+}
+
+/* Контрастные hover-эффекты */
+.bg-accent:hover {
+    background-color: var(--primary) !important; /* Золотой при наведении */
+    color: var(--primary-dark) !important;
+}
+
+.border-white:hover {
+    background-color: var(--accent) !important; /* Бирюзово-зелёный при наведении */
+    border-color: var(--accent) !important;
+}
+
+/* Социальные иконки в футере */
+.footer-social-icon:hover {
+    background-color: var(--accent) !important; /* Новый акцентный цвет */
+}
+/* Стиль для блока услуги */
+#serviceDisplay {
+    background-color: var(--light);
+    border-left: 4px solid var(--accent);
+    animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+/* Стили для блока услуги и сообщений формы */
+#serviceDisplay {
+    background-color: var(--light);
+    border-left: 4px solid var(--accent);
+    animation: fadeIn 0.3s ease-out;
+}
+
+#formMessage.bg-green-100 {
+    background-color: #f0fff4;
+    color: #2f855a;
+    border: 1px solid #c6f6d5;
+}
+
+#formMessage.bg-red-100 {
+    background-color: #fff5f5;
+    color: #c53030;
+    border: 1px solid #fed7d7;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
