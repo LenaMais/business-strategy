@@ -68,3 +68,40 @@ document.addEventListener('DOMContentLoaded', function() {
         localStorage.removeItem('selectedService');
     }
 });
+// JavaScript
+document.addEventListener('DOMContentLoaded', function() {
+    const backToTopButton = document.getElementById('back-to-top');
+    
+    // Показываем/скрываем кнопку при скролле с задержкой
+    let isScrolling;
+    window.addEventListener('scroll', function() {
+        window.clearTimeout(isScrolling);
+        isScrolling = setTimeout(function() {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('hidden');
+                setTimeout(() => backToTopButton.classList.add('visible'), 10);
+            } else {
+                backToTopButton.classList.remove('visible');
+                setTimeout(() => {
+                    if (!backToTopButton.classList.contains('visible')) {
+                        backToTopButton.classList.add('hidden');
+                    }
+                }, 300);
+            }
+        }, 100);
+    });
+    
+    // Плавный скролл при клике
+    backToTopButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+        // Микроанимация при клике
+        this.style.transform = 'scale(0.9)';
+        setTimeout(() => {
+            this.style.transform = '';
+        }, 300);
+    });
+});
