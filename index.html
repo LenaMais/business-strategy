@@ -745,12 +745,11 @@
         </div>
     </section>
 <!-- 10.5 Video CTA Section -->
-<!-- 10.5 Video CTA Section -->
 <section class="py-20 bg-white">
     <div class="container mx-auto px-4">
         <div class="flex flex-col lg:flex-row items-center gap-12">
-            <div class="lg:w-1/2">
-                <!-- YouTube видео с автовоспроизведением (без звука) -->
+            <!-- Видео - теперь всегда сверху на мобильных -->
+            <div class="w-full lg:w-1/2 order-1 lg:order-none">
                 <div class="relative pb-[56.25%] rounded-xl overflow-hidden shadow-xl">
                     <iframe 
                         class="absolute top-0 left-0 w-full h-full" 
@@ -763,7 +762,8 @@
                 </div>
             </div>
             
-            <div class="lg:w-1/2">
+            <!-- Текст - теперь всегда снизу на мобильных -->
+            <div class="w-full lg:w-1/2 order-2 lg:order-none">
                 <span class="text-accent font-semibold">ПУТЕШЕСТВИЕ</span>
                 <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-6">Готов к настоящей перезагрузке?</h2>
                 
