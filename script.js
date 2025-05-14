@@ -105,3 +105,42 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 300);
     });
 });
+
+// Для мобильных устройств - добавляем обработчик касания
+  document.addEventListener('DOMContentLoaded', function() {
+    const flipCards = document.querySelectorAll('.flip-card');
+    
+    flipCards.forEach(card => {
+      card.addEventListener('click', function() {
+        if (window.innerWidth <= 768) {
+          // На мобильных - toggle класса active
+          if (this.classList.contains('active')) {
+            this.classList.remove('active');
+          } else {
+            // Сначала убираем active у всех карточек
+            flipCards.forEach(c => c.classList.remove('active'));
+            // Затем добавляем active к текущей
+            this.classList.add('active');
+          }
+        }
+      });
+    });
+    
+    // Закрываем карточку при клике вне ее (только на мобильных)
+    if (window.innerWidth <= 768) {
+      document.addEventListener('click', function(e) {
+        if (!e.target.closest('.flip-card')) {
+          flipCards.forEach(c => c.classList.remove('active'));
+        }
+      });
+    }
+  });
+
+  // Обработчик изменения размера окна
+  window.addEventListener('resize', function() {
+    const flipCards = document.querySelectorAll('.flip-card');
+    if (window.innerWidth > 768) {
+      // На десктопах убираем все active
+      flipCards.forEach(c => c.classList.remove('active'));
+    }
+  });
